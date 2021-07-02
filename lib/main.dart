@@ -5,6 +5,10 @@ void main() {
 }
 
 class Fap extends StatelessWidget {
+  void question() {
+    print("Welcome to the first FAP question");
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,15 +21,15 @@ class Fap extends StatelessWidget {
             Text('FAP In FLUTTER'),
             RaisedButton(
               child: Text('Answer 1'),
-              onPressed: null,
+              onPressed: question,
             ),
             RaisedButton(
               child: Text('Answer 2'),
-              onPressed: null,
+              onPressed: question,
             ),
             RaisedButton(
               child: Text('Answer 3'),
-              onPressed: null,
+              onPressed: question,
             ),
           ], //list of widgets
         ),
