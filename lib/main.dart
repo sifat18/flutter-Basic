@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './question.dart';
 
 void main() {
   runApp(Fap());
@@ -38,7 +39,7 @@ class FapState extends State<Fap> {
         ),
         body: Column(
           children: [
-            Text(
+            Question(
               quest[qcount],
             ),
             RaisedButton(
