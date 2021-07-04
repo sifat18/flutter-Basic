@@ -25,11 +25,11 @@ class Fap extends StatelessWidget {
             ),
             RaisedButton(
               child: Text('Answer 2'),
-              onPressed: question,
+              onPressed: () => print("empty 2"),
             ),
             RaisedButton(
               child: Text('Answer 3'),
-              onPressed: question,
+              onPressed: () => print("empty 3"),
             ),
           ], //list of widgets
         ),
