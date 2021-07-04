@@ -4,10 +4,30 @@ void main() {
   runApp(Fap());
 }
 
-class Fap extends StatelessWidget {
-  void question() {
-    print("Welcome to the first FAP question");
+class Fap extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return FapState();
   }
+}
+
+class FapState extends State<Fap> {
+  var qcount = 0;
+
+  void question() {
+    setState(() {
+      qcount++;
+    });
+    print("Welcome to the first FAP question");
+
+    print(qcount);
+  }
+
+  var quest = [
+    'fav ice cream?',
+    'fav person?',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +38,9 @@ class Fap extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Text('FAP In FLUTTER'),
+            Text(
+              quest[qcount],
+            ),
             RaisedButton(
               child: Text('Answer 1'),
               onPressed: question,
