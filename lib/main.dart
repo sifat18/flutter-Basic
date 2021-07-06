@@ -27,8 +27,18 @@ class FapState extends State<Fap> {
   }
 
   var quest = [
-    'fav ice cream?',
-    'fav person?',
+    {
+      'qText': 'fav ice cream?',
+      'ans': ['Black', 'Red', 'Green', 'White'],
+    },
+    {
+      'qText': 'fav person?',
+      'ans': ['Asfee', 'Dola', 'Promee', 'Upsy'],
+    },
+    {
+      'qText': 'Cruhes?',
+      'ans': ['Asfee', 'lamina', 'Madiha', 'Upsy'],
+    },
   ];
 
   @override
@@ -41,11 +51,11 @@ class FapState extends State<Fap> {
         body: Column(
           children: [
             Question(
-              quest[qcount],
+              quest[qcount]['qText'] as String,
             ),
-            Answer(question),
-            Answer(question),
-            Answer(question),
+            ...(quest[qcount]['ans'] as List<String>).map((ques) {
+              return Answer(question, ques);
+            }).toList()
           ], //list of widgets
         ),
         //
