@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './question.dart';
+import './answer.dart';
 
 void main() {
   runApp(Fap());
@@ -42,18 +43,9 @@ class FapState extends State<Fap> {
             Question(
               quest[qcount],
             ),
-            RaisedButton(
-              child: Text('Answer 1'),
-              onPressed: question,
-            ),
-            RaisedButton(
-              child: Text('Answer 2'),
-              onPressed: () => print("empty 2"),
-            ),
-            RaisedButton(
-              child: Text('Answer 3'),
-              onPressed: () => print("empty 3"),
-            ),
+            Answer(question),
+            Answer(question),
+            Answer(question),
           ], //list of widgets
         ),
         //
