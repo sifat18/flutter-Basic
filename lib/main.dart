@@ -21,23 +21,28 @@ class FapState extends State<Fap> {
     setState(() {
       qcount++;
     });
-    print("Welcome to the first FAP question");
+    print("Welcome to the first App Demo");
 
     print(qcount);
   }
 
-  var quest = [
+  final quest = const [
     {
-      'qText': 'fav ice cream?',
-      'ans': ['Black', 'Red', 'Green', 'White'],
+      'qText': 'What is favourite language?',
+      'ans': ['Java', 'PHP', 'C#', 'Python'],
     },
     {
-      'qText': 'fav person?',
-      'ans': ['Asfee', 'Dola', 'Promee', 'Upsy'],
+      'qText': 'Do you know one of these?',
+      'ans': ['ML', 'AI', 'IOT', 'NO'],
     },
     {
-      'qText': 'Cruhes?',
-      'ans': ['Asfee', 'lamina', 'Madiha', 'Upsy'],
+      'qText': 'What is your Dream?',
+      'ans': [
+        'Dunno bruh',
+        'Become a billioniare',
+        'Cricketer',
+        'just be lazy'
+      ],
     },
   ];
 
@@ -48,17 +53,21 @@ class FapState extends State<Fap> {
         appBar: AppBar(
           title: Text('Fap App'),
         ),
-        body: Column(
-          children: [
-            Question(
-              quest[qcount]['qText'] as String,
-            ),
-            ...(quest[qcount]['ans'] as List<String>).map((ques) {
-              return Answer(question, ques);
-            }).toList()
-          ], //list of widgets
-        ),
-        //
+        body: qcount < quest.length
+            ? Column(
+                children: [
+                  Question(
+                    quest[qcount]['qText'] as String,
+                  ),
+                  ...(quest[qcount]['ans'] as List<String>).map((ques) {
+                    return Answer(question, ques);
+                  }).toList()
+                ], //list of widgets
+              )
+            : Center(
+                child: Text('Well done, Your done!'),
+                //
+              ),
       ),
     );
   }
